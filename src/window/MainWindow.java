@@ -14,6 +14,7 @@ public class MainWindow extends JFrame {
 	
 	private TextPanel textPanel;
 	private JButton   clickButton;
+	private ToolBar	  toolBar;
 	
 	public MainWindow() {
 		
@@ -23,6 +24,7 @@ public class MainWindow extends JFrame {
 		setLayout(new BorderLayout());
 		
 		textPanel	= new TextPanel();
+		toolBar		= new ToolBar();
 		clickButton = new JButton("click me");
 		clickButton.addActionListener(new ActionListener() {
 			
@@ -34,6 +36,7 @@ public class MainWindow extends JFrame {
 		
 		add(textPanel, BorderLayout.CENTER);
 		add(clickButton,  BorderLayout.SOUTH);
+		add(toolBar, BorderLayout.NORTH);
 
 		setLocationRelativeTo(null);
 
