@@ -12,8 +12,8 @@ public class MainWindow extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	
-	private TextArea textAria;
-	private JButton  clickButton;
+	private TextPanel textPanel;
+	private JButton   clickButton;
 	
 	public MainWindow() {
 		
@@ -22,17 +22,17 @@ public class MainWindow extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLayout(new BorderLayout());
 		
-		textAria 	= new TextArea();
+		textPanel	= new TextPanel();
 		clickButton = new JButton("click me");
 		clickButton.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				textAria.append("Click!\n");
+				textPanel.appendText("Hola\n");
 			}
 		});
 		
-		add(textAria, BorderLayout.CENTER);
+		add(textPanel, BorderLayout.CENTER);
 		add(clickButton,  BorderLayout.SOUTH);
 
 		setLocationRelativeTo(null);
