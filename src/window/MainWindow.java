@@ -13,7 +13,6 @@ public class MainWindow extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	private TextPanel textPanel;
-	private JButton   clickButton;
 	private ToolBar	  toolBar;
 	
 	public MainWindow() {
@@ -25,17 +24,10 @@ public class MainWindow extends JFrame {
 		
 		textPanel	= new TextPanel();
 		toolBar		= new ToolBar();
-		clickButton = new JButton("click me");
-		clickButton.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				textPanel.appendText("Hola\n");
-			}
-		});
 		
+		toolBar.setTextPanel(textPanel);
+	
 		add(textPanel, BorderLayout.CENTER);
-		add(clickButton,  BorderLayout.SOUTH);
 		add(toolBar, BorderLayout.NORTH);
 
 		setLocationRelativeTo(null);
